@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclic Layered Image Display</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .image-container {
+            width: 100%;
+            position: relative;
+            height: auto; /* Adjust height based on content */
+        }
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: auto;  /* Maintain original image width */
+            height: auto; /* Maintain original image height */
+            opacity: 0;   /* Start all images as invisible */
+            transition: opacity 1s ease-in-out;
+            z-index: 0;   /* Start with a base z-index */
+        }
+       
+        .image-container img:first-child {
+            opacity: 1;   /* Make the first image visible initially */
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row w-100">
+        <div class="col-12 w-100 d-flex justify-content-center">
+            <div class="image-container w-100 d-flex justify-content-center">
+                <img src="https://images.pexels.com/photos/22858523/pexels-photo-22858523/free-photo-of-s-curve-chicago.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid">
+                <img src="https://images.pexels.com/photos/19501709/pexels-photo-19501709/free-photo-of-black-and-white-shot-of-a-young-woman-standing-outside-in-the-dark-and-looking-away.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid">
+                <img src="https://images.pexels.com/photos/22741673/pexels-photo-22741673/free-photo-of-self.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid">
+                <img src="https://images.pexels.com/photos/23196871/pexels-photo-23196871/free-photo-of-cafe.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid">
+                <img src="https://images.pexels.com/photos/17585278/pexels-photo-17585278/free-photo-of-sandbank-on-sea-shore.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function(){
+        const images = $('.image-container img');
+        let currentIndex = 0;
+        let animationInterval = setInterval(revealImage, 2000); // Set the interval
+
+        function revealImage() {
+            if (currentIndex >= images.length - 1) { // Check if the last image is already displayed
+                clearInterval(animationInterval); // Stop the interval
+                return; // Exit the function
+            }
+            const nextIndex = (currentIndex + 1) % images.length;
+            images.eq(nextIndex).css('z-index', currentIndex + 2).css('opacity', 1); // Fade in the next image with incrementing z-index
+            currentIndex = nextIndex;
+        }
+    });
+</script>
+</body>
+</html>

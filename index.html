@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Atish Kumar Django Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+        body {
+            font-family: "Poppins", sans-serif !important;
+            background-color: #ffffff;
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            background-color: #f8f9fa !important;
+            color: black !important;
+        }
+
+        .main_section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            background-image: url('./images/wave2.svg');
+            background-size: cover;
+            /* background-color: #f8f9fa!important; */
+        }
+
+        .sub_main_section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .main_section .sub_main_section img {
+            filter: grayscale(1);
+        }
+
+        .sub_main_section img {
+            width: 30%;
+            margin:4%;
+            /* mix-blend-mode:color-dodge; */
+            /* filter: grayscale(1); */
+            /* filter: drop-shadow(drop-shadow(10px 10px #427f99)); */
+            /* border-radius: 40%; */
+        }
+
+        .sub_section_image {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clickables {
+            display: flex;
+            margin-top: 16%;
+            justify-content: center;
+            align-items: center;
+        }
+.form-connect{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.img-section-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-connect img{
+    width: 50%;
+    margin: 2%;
+   
+}
+.card{
+    width: 100%;
+    border: none;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+.card input{
+    background-color: #f8f9fa;
+}
+
+.form-connect .card{
+border: none;
+}
+        .textual_content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .main_header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5%;
+
+
+        }
+
+        .main_header h1 {
+            margin-top: 10%;
+        }
+
+        .main_section_experience {
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(43, 100, 5);
+        }
+
+        .social_links {
+            width: 40%;
+            display: flex;
+            margin-top: 5%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bx {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 2rem;
+        }
+
+        /* About */
+
+        .main_section_about {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            /* background-color: rgb(0, 221, 147); */
+        }
+
+        .about_textual_content {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .service_textual_content_grid{
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+            gap: 20px;    
+  /* grid-template-rows: auto auto; */
+        }
+
+        .service_textual_content_grid .card {
+            width: 100%;
+            margin: 3%;
+            background-color: #f8f9fa !important;
+            display: flex;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            border: none;
+            padding: 6%;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
+            transition: all ease-in-out .3s;
+        }
+
+        .service_textual_content_grid .card:hover {
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            cursor: pointer;
+            transition: all ease-in-out .7s;
+
+        }
+        .about_textual_content p {
+            padding: 4%;
+            text-align: justify;
+        }
+
+        .cards_section {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about_textual_content .card {
+            width: 50%;
+            margin: 3%;
+            background-color: #f8f9fa !important;
+            display: flex;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            border: none;
+            padding: 5%;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
+            transition: all ease-in-out .3s;
+        }
+
+        .about_textual_content .card:hover {
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            cursor: pointer;
+            transition: all ease-in-out .7s;
+
+        }
+
+        .main_section_experience {
+            height: 100vh;
+            width: 100%;
+            background-color: #f8f9fa !important;
+        }
+
+        .main_section_services {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            /* background-color: rgb(43, 100, 5); */
+        }
+
+        .main_section_connect {
+            height: 100vh;
+            width: 100%;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f8f9fa !important;
+            background: url('./images/Maps_BG@2x.png');
+            background-size: contain;
+        }
+
+        .progress {
+            background-color: #f8f9fa !important;
+            margin: 1%;
+            height: 3rem !important;
+        }
+
+        .progress-bar {
+            height: 3rem !important;
+        }
+
+        .progress p {
+            margin-right: 1%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .main_section_about{
+                height: auto;
+            }
+            .main_section_services{
+                height: auto;
+            }
+    /* Styles for mobiles here */
+    .sub_section_image{
+        flex-direction: column;
+    }
+    .sub_main_section img{
+        width: 70%;
+    }
+
+    /* About Us Media */
+
+    .sub_main_section{
+        flex-direction: column;
+    }
+    .cards_section{
+        flex-direction: column;
+    }
+    .cards_section .card{
+        width: 100%;
+
+    }
+    .service_textual_content_grid{
+        grid-template-columns: 1fr;
+        padding-right:10%;
+    }
+    .form-connect{
+        flex-direction: column;
+    }
+    .form-connect .card{
+        background: transparent;
+        
+    }
+    .main_section_connect{
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+}
+
+    </style>
+    <!-- Bootstrap CSS -->
+    
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Atish Kumar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  mb-2 mb-lg-0 navbar-nav  mb-2 mb-lg-0 w-100 justify-content-end">
+                    <!-- <li class="nav-item mx-5 text-3xl">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li> -->
+                    <li class="nav-item mx-5 text-3xl">
+                        <a class="nav-link" href="#main_section_about">About</a>
+                    </li>
+                    <li class="nav-item mx-5 text-3xl">
+                        <a class="nav-link" href="#main_section_experience">Skills</a>
+                    </li>
+                    <li class="nav-item mx-5 text-3xl">
+                        <a class="nav-link" href="#main_section_services">Services</a>
+                    </li>
+                    <li class="nav-item mx-5 text-3xl">
+                        <a class="nav-link" href="#main_section_connect">Connect</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Opening Template -->
+    <section class="main_section">
+        <div class="sub_main_section container">
+            <div class="sub_section_image">
+                <img class="" src="./images/PORTFOLIO_O2Q1rk0.png" alt="Atish kumar" />
+                <div class="intro">
+
+                    <div class="textual_content">
+
+                        <p>Hello I'm</p>
+                        <h1>Atish Kumar</h1>
+                        <h6>Full Stack Developer</h6>
+                    </div>
+
+                    <div class="clickables">
+                        <button class="btn btn-outline-secondary mx-2">Download CV </button>
+                        <button class="btn btn-secondary mx-2">About Me </button>
+                    </div>
+                    <div class="social_links">
+                        <i class='bx bxl-linkedin-square'></i>
+                        <i class='bx bxl-instagram'></i>
+                        <i class='bx bxl-github'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <form action="/file-upload"
+    class="dropzone"
+    id="my-awesome-dropzone">
+    <input type="file" name="file" />
+</form> -->
+<!-- <form action="/target" class="dropzone" id="my-dropzone"></form> -->
+
+<!-- <form action="/file-upload" class="dropzone">
+    <div class="fallback">
+      <input name="file" type="file" multiple />
+    </div>
+  </form> -->
+    <!-- About -->
+    <section class="main_section_about" id="main_section_about">
+        <div class="container main_header">
+            <h1>About Me</h1>
+        </div>
+        <div class="container sub_main_section">
+            <img class="" src="./images/view-3d-man-using-laptop.jpg" alt="Atish kumar" />
+            <div class="about_textual_content">
+                <div class="cards_section">
+
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <h3><i class='bx bx-award'></i> Experience </h3>
+                        <h5>3+ years</h5>
+                        <h5>Full Stack Developer</h5>
+                    </div>
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                        <h3><i class='bx bxs-graduation'></i> Education</h3>
+                        <h5>Bsc. Computer Science</h5>
+                        <h5>MBA(IT Management)</h5>
+                    </div>
+
+                </div>
+                <p>
+                    Results-driven and detail-oriented Python Developer with extensive expertise in web
+                    development using the Django framework. Proven track record of delivering high-quality,
+                    scalable, and secure applications within collaborative team environments. Adept at
+                    designing and implementing robust backend systems, integrating front-end components,
+                    and ensuring optimal performance. Strong problem-solving skills and a commitment to
+                    delivering clean, maintainable code. Experienced in various aspects of the software
+                    development lifecycle, from concept to deployment
+                </p>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">PROFESSIONAL EXPERIENCE (3+ YEARS)</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Tata Institute of Social Sciences Deonar, Mumbai. Sep 2022 - Present<br>
+                        Software Developer<br>
+                        Roles and Responsibility<br>
+                        <ul>
+
+                            <li>
+                                Modified existing software systems to enhance performance and add new features.
+                            </li>
+                            <li>
+                                Debugged code to identify errors and fix them efficiently.
+                            </li>
+                            <li>
+                                Created applications using Django, HTML, CSS, JavaScript, and other programming
+                                languages.
+                            </li>
+                            <li>
+                                Collaborated with team members to ensure successful project completion.
+                            </li>
+                            <li>
+                                Delivered code to meet functional or technical specifications.
+                            </li>
+                            <li>
+                                Optimized program performance by analyzing code and making changes as needed.
+                            </li>
+                            <li>
+                                Participated in code review meetings, providing input on bugs, inefficiencies and
+                                potential solutions to emergent issues.
+                            </li>
+                            <li>
+                                Designed database structures to store data securely and efficiently.
+                            </li>
+                            <li>
+                                Utilized unit testing and other methods to enhance quality.
+                            </li>
+                            <li>
+
+                                10.Informed project manager of milestone updates and provided detailed project reports.
+                            </li>
+                            <li>
+                                11.Recommended improvements to facilitate team and project workflow.
+                            </li>
+                        </ul>
+
+                        Nettech Solutions Pvt. Limited, Rabale , Navi Mumbai. Jun 2021 - Sep 2022<br>
+                        Software Engineer<br>
+                        Roles and Responsibility<br>
+                        <ul>
+
+                            <li>
+                                Coordinated testing and validation procedures through software development lifecycle.
+                            </li>
+                            <li>
+                                Recommended improvements to facilitate team and project workflow.
+                            </li>
+                            <li>
+                                Wrote user manuals and other documentation for roll-out in customer training sessions.
+                            </li>
+                            <li>
+                                Updated software upon release of vendor patches to mitigate vulnerabilities.
+                            </li>
+                            <li>
+                                Performed regression and performance tests for updated systems.
+                            </li>
+                            <li>
+                                Performed integration testing between different components of an application prior to
+                                release.
+                            </li>
+                            <li>
+                                Participated in peer reviews of software designs, code changes, unit tests.
+                            </li>
+                            <li>
+                                Designed test cases based on use cases and business requirements documents
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">EDUCATION</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+
+                        <b>DR. D.Y. PATIL, VIDYAPEETH PUNE</b> JUN 2022<br>
+                        Masters of Business Administration<br>
+                        <br><br>
+                        <b>ST. WILFRED EDUCATION SOCIETY</b> MAY 2020<br>
+                        Bachelor in Computer Science<br>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Exp -->
+    <section class="main_section_experience" id="main_section_experience">
+        <div class="container main_header">
+            <h1>Skills</h1>
+
+        </div>
+        <div class="skills container">
+
+            <div class="progress">
+                <div class="progress-bar progress-bar-animated progress-bar-striped  bg-dark" role="progressbar"
+                    style="width:90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><i
+                        class='bx bxl-python'></i></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped  progress-bar-animated  bg-dark" role="progressbar"
+                    style="width: 75%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><i
+                        class='bx bxl-css3'></i></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar"
+                    style="width: 50%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><i
+                        class='bx bxl-javascript'></i></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar"
+                    style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><i
+                        class='bx bxl-html5'></i></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar"
+                    style="width: 40%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><i
+                        class='bx bxl-docker'></i></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar"
+                    style="width: 60%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><i
+                        class='bx bxl-postgresql'></i></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark text-light"
+                    role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="50"><i
+                        class='bx bxl-aws'></i></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark text-light"
+                    role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="70"><i
+                        class='bx bxl-react'></i></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark text-light"
+                    role="progressbar" style="width: 30%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="30"><i
+                        class='bx bxl-nodejs'></i></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark text-light"
+                    role="progressbar" style="width: 90%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="30"><i
+                        class='bx bxl-django'></i></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark text-light"
+                    role="progressbar" style="width: 40%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="30"><i
+                        class='bx bxl-tailwind-css'></i></div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="main_section_services" id="main_section_services">
+        <div class="container main_header">
+            <h1>Services</h1>
+        </div>
+
+        <div class="container service_textual_content_grid">
+            <div class="block card cards_section">
+                Management Website Development
+            </div>
+            <div class="block card cards_section">
+                Landing Page
+            </div>
+            <div class="block card cards_section">
+                Ecommerce Develpment
+            </div>
+            <div class="block card cards_section">
+                API Development
+            </div>
+            <div class="block card cards_section">
+                Chat Application
+            </div>
+            <div class="block card cards_section">
+                Blog Application
+            </div>
+            <div class="block card cards_section">
+                Webiste Maintaince
+            </div>
+            <div class="block card cards_section">
+                API Development
+            </div>
+        </div>
+        <!-- <div class="services_section">
+        
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="./images/DALLE 2024-0420.png" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                  </div>
+                  
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+           
+        </div> -->
+    </section>
+
+
+    <section class="main_section_connect" id="main_section_connect">
+        <div class="container main_header">
+            <h1>Connect</h1>
+        </div>
+        <div class="container">
+            <div class="form-connect">
+
+                <div class="card p-5">
+                    <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your Full Name">
+
+                </div>
+                <div class="mb-3">
+
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                  <div class="mb-3">
+                    <label for="inputState" class="form-label">Project</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Choose Project</option>
+                        <option>Management Website Development</option>
+                        <option> Landing Page</option>
+                        <option> Ecommerce Develpment</option>
+                        <option>API Development</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="d-flex justify-content-center">
+                      <button class="btn btn-outline-secondary" type="button">Submit</button>
+                    </div>
+                </div>
+
+                <div class="img-section-form">
+                    <img src="./images/undraw_fill_form_re_cwyf.png" alt="" class="undraw">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Note that the name "myDropzone" is the camelized
+        // id of the form.
+        Dropzone.options.myDropzone = {
+            // Dropzone.discover();
+        };
+      </script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
