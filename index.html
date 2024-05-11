@@ -368,11 +368,55 @@ border: none;
         background-size: cover;
 
     }
+    .main_section_connect {
+        height: auto;
+    }
+    .service_textual_content_grid{
+        height: auto;
+    }
 }
 
     </style>
     <!-- Bootstrap CSS -->
-    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your public key
+            emailjs.init({
+              publicKey: "aCEuQs8E_mBCLLH1V",
+            });
+        })();
+
+        // Function to handle form submission
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the input values when the form is submitted
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+            let work = document.getElementById("inputState").value;
+
+            // Create the parameters object
+            let params = {
+                name: name,
+                email: email,
+                message: message,
+                work:work,
+            };
+
+            console.log("Input values:", params); // Debugging statement
+
+            // Send email using EmailJS
+            emailjs.send("service_3i12ct9", "template_rpfvmqn", params)
+                .then(() => {
+                    alert("Mail Sent! <br> Thank you We'll contact you soon.");
+                })
+                .catch((error) => {
+                    console.log('FAILED...', error);
+                });
+        }
+    </script>
 </head>
 
 <body>
@@ -447,11 +491,11 @@ border: none;
     </div>
   </form> -->
     <!-- About -->
-    <section class="main_section_about fadeInLeft" id="main_section_about">
-        <div class="container main_header">
+    <section class="main_section_about " id="main_section_about">
+        <div class="container main_header ">
             <h1>About Me</h1>
         </div>
-        <div class="container sub_main_section">
+        <div class="container sub_main_section fadeInLeft   ">
             <img class="" src="./images/view-3d-man-using-laptop.jpg" alt="Atish kumar" />
             <div class="about_textual_content">
                 <div class="cards_section">
@@ -729,27 +773,29 @@ border: none;
     </section>
 
 
-    <section class="main_section_connect fadeInLeft" id="main_section_connect">
+    <section class="main_section_connect mt-5 fadeInLeft" id="main_section_connect">
         <div class="container main_header">
             <h1>Connect</h1>
         </div>
         <div class="container">
+            <form onsubmit="submitForm(event)">
+            
             <div class="form-connect">
 
                 <div class="card p-5">
                     <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Your Name</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your Full Name">
+                    <input type="text" id ="name" class="form-control" id="exampleFormControlInput1" placeholder="Your Full Name">
 
                 </div>
                 <div class="mb-3">
 
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        <input type="email" id="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                     </div>
                   <div class="mb-3">
                     <label for="inputState" class="form-label">Project</label>
-                    <select id="inputState" class="form-select">
+                    <select id="inputState" name = "inputState" class="form-select">
                         <option selected>Choose Project</option>
                         <option>Management Website Development</option>
                         <option> Landing Page</option>
@@ -758,11 +804,11 @@ border: none;
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="3"></textarea>
                 </div>
                 <div class="d-flex justify-content-center">
-                      <button class="btn btn-outline-secondary" type="button">Submit</button>
+                      <button class="btn btn-outline-secondary" type="submit">Submit</button>
                     </div>
                 </div>
 
@@ -770,6 +816,7 @@ border: none;
                     <img src="./images/undraw_fill_form_re_cwyf.png" alt="" class="undraw">
                 </div>
             </div>
+        </form>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
