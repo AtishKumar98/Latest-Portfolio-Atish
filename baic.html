@@ -1,26 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Form</title>
+    <title>Contact Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your public key
+            emailjs.init({
+              publicKey: "aCEuQs8E_mBCLLH1V",
+            });
+        })();
+
+        // Function to handle form submission
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the input values when the form is submitted
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            // Create the parameters object
+            let params = {
+                name: name,
+                email: email,
+                message: message
+            };
+
+            console.log("Input values:", params); // Debugging statement
+
+            // Send email using EmailJS
+            emailjs.send("service_3i12ct9", "template_rpfvmqn", params)
+                .then(() => {
+                    console.log('SUCCESS!');
+                })
+                .catch((error) => {
+                    console.log('FAILED...', error);
+                });
+        }
+    </script>
 </head>
 <body>
-
-<form action="./sendmail.php" method="post">
-  <label for="firstName">First Name:</label>
-  <input type="text" id="firstName" name="firstName" required>
-  <br>
- 
-  <label for="email">Email Address:</label>
-  <input type="email" id="email" name="email" required>
-  <br>
- 
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" required></textarea>
-  <br>
- 
-  <input type="submit" value="Send">
-</form>
-
+    <form id="contact-form" onsubmit="submitForm(event)">
+        <label>Name</label>
+        <input id="name" type="text" name="name">
+        <label>Email</label>
+        <input id="email" type="email" name="email">
+        <label>Message</label>
+        <textarea id="message" name="message"></textarea>
+        <input type="submit" value="Send">
+    </form>
 </body>
 </html>
